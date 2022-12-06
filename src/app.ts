@@ -1,8 +1,12 @@
 import express from "express";
-import connect from "./db/connect";
-import routes from "./routes";
+import connect from "./config/connect";
+import routes from "./routes/web";
+import dotenv from 'dotenv';
+
 
 const app = express();
+
+dotenv.config();
 
 app.use(express.json());
 
@@ -12,6 +16,6 @@ routes(app);
 
 connect();
 
-app.listen("3001", () => {
-  console.log(`Server listing at 3001`);
+app.listen(process.env.PORT, () => {
+  console.log(`Server listing at port: ${process.env.PORT}`);
 });

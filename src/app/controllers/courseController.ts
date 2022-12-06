@@ -28,11 +28,15 @@ class CourseController {
   }
   update(req: Request, res: Response) {
     (async () => {
-      await CourseModel.updateOne({ _id: req.params.id }, req.body).then(
-        (course) => {
-          res.json(course);
+      await CourseModel.updateOne(
+        { _id: req.params.id },
+        {
+          title: req.body.title,
+          description: req.body.description,
         }
-      );
+      ).then((course) => {
+        res.json(course);
+      });
     })();
   }
   destroy(req: Request, res: Response) {
