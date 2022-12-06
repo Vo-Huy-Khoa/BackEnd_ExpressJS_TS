@@ -1,9 +1,8 @@
 import mongoose from "mongoose";
 export default async function connect() {
+  const url = process.env.MONGO_URL || "";
   return await mongoose
-    .connect(
-      "mongodb+srv://vohuykhoa:vohuykhoa@cluster0.nppkasl.mongodb.net/?retryWrites=true&w=majority"
-    )
+    .connect(url)
     .then(() => {
       console.log("Database connected");
     })
