@@ -12,11 +12,11 @@ const initWebRoute = (app: express.Application) => {
   router.delete("/courses/delete/:id", courseController.destroy);
   router.get("/courses", courseController.get);
 
+  router.post("/users/create", userController.create);
   router.delete('/users/delete/"id', userController.destroy);
   router.put("users/edit/:id", userController.update);
   router.get("/users/id", userController.find);
-  router.post("users/create", userController.create);
-  router.get("users/", userController.get);
+  router.get("/users", userController.get);
 
   return app.use("/api", router);
 };
