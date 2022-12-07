@@ -5,7 +5,7 @@ const createToken = () => {
   let payload = { name: "huykhoa", email: "huykhoa630@gmail.com" };
   let token = null;
   try {
-    token = jwt.sign(payload, key);
+    token = jwt.sign(payload, key, {expiresIn: '30s'});
     // console.log(token);
   } catch (error) {
     console.log(error);

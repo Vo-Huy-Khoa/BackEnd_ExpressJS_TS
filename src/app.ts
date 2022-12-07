@@ -1,9 +1,7 @@
 import express from "express";
 import connect from "./config/connect";
 import routes from "./routes/web";
-import dotenv from 'dotenv';
-import {createToken, verifyToken} from './app/middleware/token'
-
+import dotenv from "dotenv";
 
 const app = express();
 
@@ -14,14 +12,6 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 routes(app);
-
-
-const jwt = createToken();
-
-const decodedData = verifyToken(jwt);
-console.log(decodedData);
-
-
 
 connect();
 

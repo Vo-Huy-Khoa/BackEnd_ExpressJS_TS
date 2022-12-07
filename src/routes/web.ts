@@ -1,5 +1,6 @@
 import express from "express";
 import Router from "express";
+import authToken from "../app/middleware/auth";
 import courseController from "../app/controllers/courseController";
 import userController from "../app/controllers/userController";
 
@@ -10,7 +11,7 @@ const initWebRoute = (app: express.Application) => {
   router.get("/courses/:id", courseController.find);
   router.put("/courses/edit/:id", courseController.update);
   router.delete("/courses/delete/:id", courseController.destroy);
-  router.get("/courses", courseController.get);
+  router.get("/courses", authToken, courseController.get);
 
   router.post("/users/create", userController.create);
   router.delete('/users/delete/"id', userController.destroy);
