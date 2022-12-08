@@ -13,6 +13,8 @@ const authToken = (req: Request, res: Response, next: NextFunction) => {
     const isVeriToken = verifyToken(jwt);
     if (isVeriToken) {
       console.log(isVeriToken);
+      console.log('verify token');
+      
       next();
     }
   } catch (error) {
