@@ -1,0 +1,51 @@
+
+# I. Course
+
+### get all course
+GET http://localhost:3001/api/courses
+
+### create new course
+POST http://localhost:3001/api/courses/create
+content-type: application/json
+{
+    "title": "new data",
+    "description": "new description"
+}
+
+### update course
+http://localhost:3001/api/courses/edit/63919f5dd471e9607dd49313
+Content-Type: application/json
+
+{
+    "title": "new data",
+    "description": "new description"
+}
+###  delete a course
+http://localhost:3001/api/courses/delete/63919f5dd471e9607dd49313
+
+
+
+
+# I. User
+
+### get all users
+GET http://localhost:3001/api/users
+
+### create new users
+POST http://localhost:3001/api/users/create
+Content-Type: application/json
+{
+    "name": "new user",
+    "email": "new description"
+}
+
+### update users
+http://localhost:3001/api/users/edit/63919f5dd471e9607dd49313
+Content-Type: application/json
+
+{
+    "name": "new data",
+    "email": "new description"
+}
+###  delete a users
+http://localhost:3001/api/users/delete/63919f5dd471e9607dd49313

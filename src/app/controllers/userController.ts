@@ -12,7 +12,7 @@ class UserController {
       });
   }
 
-  async create(req: Request, res: Response) {
+  async register(req: Request, res: Response) {
     const createUser = new UserModel({
       name: req.body.name,
       email: req.body.email,
